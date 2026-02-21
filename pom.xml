@@ -8,16 +8,16 @@
     <groupId>com.instagram.clone</groupId>
     <artifactId>instagram-clone</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>instagram-clone</name>
-    <description>Instagram Clone Project</description>
+    <description>Instagram Clone WAR Deployment</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.5</version>
-        <relativePath/> 
+        <relativePath/>
     </parent>
 
     <properties>
@@ -32,12 +32,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Optional: DevTools (auto restart) -->
+        <!-- Tomcat Provided (External Server kosam) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Testing -->
@@ -50,6 +49,8 @@
     </dependencies>
 
     <build>
+        <finalName>instagram-clone</finalName>
+
         <plugins>
 
             <!-- Spring Boot Maven Plugin -->
